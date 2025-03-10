@@ -5,11 +5,11 @@ import random
 import matplotlib.pyplot as plt
 import time
 
-# Define page title
+# Page title
 st.title("A/B Testing for Data Visualization")
 
-# Business Question - visible to the user
-st.subheader("Business Question: Which month has the highest number of passengers?")
+# Business Question 
+st.subheader("Which month has the highest number of passengers?")
 
 # Function to load data from Google Sheets
 def load_data_from_google_sheets():
@@ -75,7 +75,7 @@ if st.session_state.selected_chart:
     
     # Show "I answered your question" button
     if not st.session_state.showing_result:
-        if st.button("I answered your question"):
+        if st.button("I answered your question :)"):
             # Calculate response time
             end_time = time.time()
             st.session_state.response_time = round(end_time - st.session_state.start_time, 2)
@@ -83,7 +83,7 @@ if st.session_state.selected_chart:
 
 # Display the response time if available
 if st.session_state.showing_result and st.session_state.response_time is not None:
-    st.success(f"⏳ Response Time: {st.session_state.response_time} seconds")
+    st.success(f"Response Time: {st.session_state.response_time} seconds")
     st.write(f"You were shown Chart {st.session_state.selected_chart}")
     
     # Reset button
